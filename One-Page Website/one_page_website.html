@@ -3,7 +3,148 @@
     <head>
         <meta charset="UTF-8" />
         <title>Pizzeria Mario</title>
-        <link rel="stylesheet" href="./css/one_page_website.css">
+        <!-- <link rel="stylesheet" href="./css/one_page_website.css"> -->
+        <style>
+            body {
+                font-family: Verdana, sans-serif;
+                margin: 0;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            .row > .column {
+                padding: 0 8px;
+            }
+
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            .column {
+                float: left;
+                width: 11.11%;
+            }
+
+            /* The Modal (background) */
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1;
+                padding-top: 100px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: black;
+            }
+
+            /* Modal Content */
+            .modal-content {
+                position: relative;
+                background-color: #fefefe;
+                margin: auto;
+                padding: 0;
+                width: 90%;
+                max-width: 1200px;
+            }
+
+            /* The Close Button */
+            .close {
+                color: white;
+                position: absolute;
+                top: 10px;
+                right: 25px;
+                font-size: 35px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: #999;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .mySlides {
+                display: none;
+            }
+
+            .cursor {
+                cursor: pointer;
+            }
+
+            /* Next & previous buttons */
+            .prev,
+            .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -50px;
+                color: white;
+                font-weight: bold;
+                font-size: 20px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+                -webkit-user-select: none;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+            /* Number text (1/3 etc) */
+            .numbertext {
+                color: #f2f2f2;
+                font-size: 12px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+            }
+
+            img {
+                margin-bottom: -4px;
+            }
+
+            .caption-container {
+                text-align: center;
+                background-color: black;
+                padding: 2px 16px;
+                color: white;
+            }
+
+            .demo {
+                opacity: 0.6;
+            }
+
+            .active,
+            .demo:hover {
+                opacity: 1;
+            }
+
+            img.hover-shadow {
+                transition: 0.3s;
+            }
+
+            .hover-shadow:hover {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+        </style>
     </head>
     <body>
 
@@ -30,122 +171,142 @@
         <!-- END HOME -->
         
         <!-- GALLERY -->
-        <section>
-            <div id="gallery">
-                <h1>GALLERY</h1>
-                <div>
+        <h2 id="gallery" style="text-align:center">Lightbox Gallery</h2>
 
-                    <!-- PHOTO CONTAINER 1 -->
-                    <div>
-                        <div>
-                            <img src="images/thumb/pizza_01.jpg" alt="Pizza Margherita" width="600" height="600">
-                            <div>
-                                <h3>Click to Enlarge</h3>
-                                <p>Buy Pizza Margherita</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END PHOTO CONTAINER 1 -->
-                    
-                    <!-- PHOTO CONTAINER 2 -->
-                    <div>
-                        <div>
-                            <img src="images/thumb/pizza_02.jpg" alt="Pizza Marinara" width="600" height="600">
-                            <div>
-                                <h3>Click to Enlarge</h3>
-                                <p>Buy Pizza Marinara</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END PHOTO CONTAINER 2 -->
-
-                    <!-- PHOTO CONTAINER 3 -->
-                    <div>
-                        <div>
-                            <img src="images/thumb/pizza_03.jpg" alt="Pizza Pepperoni" width="600" height="600">
-                            <div>
-                                <h3>Click to Enlarge</h3>
-                                <p>Buy Pizza Pepperoni</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END PHOTO CONTAINER 3 -->
-
-                    <!-- PHOTO CONTAINER 4 -->
-                    <div>
-                        <div>
-                            <div>
-                                <img src="images/thumb/pizza_04.jpg" alt="Pizza Capricciosa" width="600" height="600">
-                                <h3>Click to Enlarge</h3>
-                                <p>Buy Pizza Capricciosa</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END PHOTO CONTAINER 4 -->
-
-                    <!-- PHOTO CONTAINER 5 -->
-                    <div>
-                        <div>
-                            <img src="images/thumb/pizza_05.jpg" alt="Pizza Quattro Formaggi" width="600" height="600">
-                            <div>
-                                <h3>Click to Enlarge</h3>
-                                <p>Buy Pizza Quattro Formaggi</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END PHOTO CONTAINER 5 -->
-
-                    <!-- PHOTO CONTAINER 6 -->
-                    <div>
-                        <div>
-                            <img src="images/thumb/pizza_06.jpg" alt="Pizza Funghi" width="600" height="600">
-                            <div>
-                                <h3>Click to Enlarge</h3>
-                                <p>Buy Pizza Funghi</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END PHOTO CONTAINER 6 -->
-
-                    <!-- PHOTO CONTAINER 7 -->
-                    <div>
-                        <div>
-                            <img src="images/thumb/pizza_07.jpg" alt="Pizza Antipasto" width="600" height="600">
-                            <div>
-                                <h3>Click to Enlarge</h3>
-                                <p>Buy Pizza Antipasto</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END PHOTO CONTAINER 7 -->
-
-                    <!-- PHOTO CONTAINER 8 -->
-                    <div>
-                        <div>
-                            <img src="images/thumb/pizza_08.jpg" alt="Pizza Buffalo Chicken" width="600" height="600">
-                            <div>
-                                <h3>Click to Enlarge</h3>
-                                <p>Buy Pizza Buffalo Chicken</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END PHOTO CONTAINER 8 -->
-
-                    <!-- PHOTO CONTAINER 9 -->
-                    <div>
-                        <div>
-                            <img src="images/thumb/pizza_09.jpg" alt="Pizza Veggie" width="600" height="600">
-                            <div>
-                                <h3>Click to Enlarge</h3>
-                                <p>Buy Pizza Veggie</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END PHOTO CONTAINER 9 -->
-                    
-                </div>
+        <div class="row">
+            <div class="column">
+                <img src="images/pizza_01.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
             </div>
-        </section>
+
+            <div class="column">
+                <img src="images/pizza_02.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+            </div>
+
+            <div class="column">
+                <img src="images/pizza_03.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+            </div>
+            
+            <div class="column">
+                <img src="images/pizza_04.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+            </div>
+
+            <div class="column">
+                <img src="images/pizza_05.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+            </div>
+
+            <div class="column">
+                <img src="images/pizza_06.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+            </div>
+
+            <div class="column">
+                <img src="images/pizza_07.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+            </div>
+
+            <div class="column">
+                <img src="images/pizza_08.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+            </div>
+
+            <div class="column">
+                <img src="images/pizza_09.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+            </div>
+
+        </div>
+
+        <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+
+                <div class="mySlides">
+                    <div class="numbertext">1 / 9</div>
+                    <img src="images/pizza_01.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">2 / 9</div>
+                    <img src="images/pizza_02.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">3 / 9</div>
+                    <img src="images/pizza_03.jpg" style="width:100%">
+                </div>
+                
+                <div class="mySlides">
+                    <div class="numbertext">4 / 9</div>
+                    <img src="images/pizza_04.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">5 / 9</div>
+                    <img src="images/pizza_05.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">6 / 9</div>
+                    <img src="images/pizza_06.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">7 / 9</div>
+                    <img src="images/pizza_07.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">8 / 9</div>
+                    <img src="images/pizza_08.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">9 / 9</div>
+                    <img src="images/pizza_09.jpg" style="width:100%">
+                </div>
+            
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+
+                <div class="column">
+                    <img class="demo cursor" src="images/pizza_01.jpg" style="width:100%" onclick="currentSlide(1)" alt="Pizza Margherita">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="images/pizza_02.jpg" style="width:100%" onclick="currentSlide(2)" alt="Pizza Marinara">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="images/pizza_03.jpg" style="width:100%" onclick="currentSlide(3)" alt="Pizza Pepperoni">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="images/pizza_04.jpg" style="width:100%" onclick="currentSlide(4)" alt="Pizza Capricciosa">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="images/pizza_05.jpg" style="width:100%" onclick="currentSlide(5)" alt="Pizza Quattro Formaggi">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="images/pizza_06.jpg" style="width:100%" onclick="currentSlide(6)" alt="Pizza Funghi">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="images/pizza_07.jpg" style="width:100%" onclick="currentSlide(7)" alt="Pizza Antipasto">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="images/pizza_08.jpg" style="width:100%" onclick="currentSlide(8)" alt="Pizza Buffalo Chicken">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="images/pizza_09.jpg" style="width:100%" onclick="currentSlide(9)" alt="Pizza Veggie">
+                </div>
+
+            </div>
+        </div>
         <!-- END GALLERY -->
 
         <!-- VIDEO -->
@@ -189,6 +350,52 @@
         <!-- FOOTER -->
         <div>www.pizzeriamario.com &nbsp;|&nbsp; &copy; 2025</div>
         <!-- END FOOTER -->
-        
+
+
+        <!-- ===== LIGHTBOX ELEMENT ===== -->
+        <div class="lightbox" id="lightbox">
+            <span class="lightbox-close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+    </script>
+
     </body>
 </html>
